@@ -1,0 +1,37 @@
+﻿<Window x:Class="ex2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ex2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="727.915" Width="1139.596">
+    <Grid>
+        <Grid Height="720">
+            <Button Content="选择源文件" HorizontalAlignment="Left" Margin="784,360,0,0" VerticalAlignment="Top" Width="109" Click="Button_Click" Height="47"/>
+            <TextBox x:Name="rawFile" HorizontalAlignment="Left" Height="323" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="1112" FontFamily="宋体" FontSize="16"/>
+            <Button x:Name="startAnalysis" Content="开始分析" HorizontalAlignment="Left" Margin="670,412,0,0" VerticalAlignment="Top" Width="109" Click="startAnalysis_Click" Height="47"/>
+            <Button x:Name="selectGrammar" Content="选择语法文件" HorizontalAlignment="Left" Margin="670,360,0,0" VerticalAlignment="Top" Width="109" Click="selectGrammar_Click" Height="47"/>
+            <Button x:Name="show" Content="显示结果" HorizontalAlignment="Left" Margin="784,412,0,0" VerticalAlignment="Top" Width="109" Click="show_Click" Height="47"/>
+            <DataGrid x:Name="Result" 
+                      IsReadOnly="True" 
+                      AutoGenerateColumns="False" 
+                      HorizontalAlignment="Left" 
+                      Height="348" 
+                      Margin="10,338,0,0" 
+                      VerticalAlignment="Top" 
+                      Width="566">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header= "步骤" Binding="{Binding step}"/>
+                    <DataGridTextColumn Header= "分析栈" Binding="{Binding stack}"/>
+                    <DataGridTextColumn Header= "剩余输入串" Binding="{Binding input}"/>
+                    <DataGridTextColumn Header= "所用产生式" Binding="{Binding production}"/>
+                    <DataGridTextColumn Header= "动作" Binding="{Binding action}"/>
+                    <DataGridTextColumn Header= "描述" Binding="{Binding describe}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+
+    </Grid>
+</Window>
